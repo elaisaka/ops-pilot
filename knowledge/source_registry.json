@@ -1,0 +1,34 @@
+{
+  "return_rule": {
+    "source_type": "official_regulation",
+    "source_title": "网络购买商品七日无理由退货暂行办法",
+    "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+    "source_published_at": "2020-11-03",
+    "source_fetched_at": "2026-09-20",
+    "scope": "中国境内网络购物售后；不替代个案法律判断"
+  },
+  "ecommerce_law": {
+    "source_type": "official_law",
+    "source_title": "中华人民共和国电子商务法",
+    "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+    "source_published_at": "2020-06-01",
+    "source_fetched_at": "2026-09-20",
+    "scope": "中国境内电子商务活动；不替代个案法律判断"
+  },
+  "courier_rule": {
+    "source_type": "official_regulation",
+    "source_title": "快递暂行条例（2025年修订）",
+    "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+    "source_published_at": "2025-04-13",
+    "source_fetched_at": "2026-09-20",
+    "scope": "中国境内快递服务；不替代个案法律判断"
+  },
+  "einvoice_guide": {
+    "source_type": "official_tax_guide",
+    "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+    "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+    "source_published_at": "2024-11-27",
+    "source_fetched_at": "2026-09-20",
+    "scope": "数电发票一般信息；具体开票资格和税务处理应以税务机关规则为准"
+  }
+}

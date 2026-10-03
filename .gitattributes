@@ -1,0 +1,3 @@
+# Frozen evaluation manifests hash exact file bytes. Preserve original line endings
+# on Windows and Linux rather than normalizing them on add/checkout.
+* -text

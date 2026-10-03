@@ -1,0 +1,13 @@
+**
+!Dockerfile
+!pyproject.toml
+!README.md
+!constraints-demo.txt
+!app/
+!app/**
+!knowledge/
+!knowledge/**
+!scripts/
+!scripts/create_demo_accounts.py
+**/__pycache__/
+**/*.pyc

@@ -1,0 +1,1195 @@
+{
+  "schema_version": 1,
+  "retriever": "Store.search_knowledge",
+  "top_k": 3,
+  "metric_denominator": "all queries; Recall is expected-source hit rate, not chunk recall",
+  "sha256": {
+    "cases": "67f87da5759bb18eb3db50698071b3daac667f81e7bcf87167502498e05d9d30",
+    "corpus": "0e92ca11b33d84110b6c4e38a44ba0effaa691685164a36eeb4207e3e857eeaf",
+    "sources": "65f7956d79c9c69131ff3f012ea0fa753ca271a70e62313fdc4f04529d35bde7",
+    "retriever": "adef1f5b1a6255940106019605a7077e078e9ac99514f98a41e9841459d5c0de"
+  },
+  "metrics": {
+    "total": 24,
+    "recall_at_1": 0.75,
+    "recall_at_3": 0.875,
+    "wrong_citation_count": 3,
+    "wrong_citation_rate": 0.125,
+    "no_evidence_count": 3,
+    "no_evidence_rate": 0.125,
+    "no_results_count": 0,
+    "section_annotated_count": 24,
+    "section_recall_at_3": 0.625,
+    "by_source": {
+      "“数电发票”12月起全国推行！一文了解它有哪些优点": {
+        "total": 6,
+        "hits_at_3": 5,
+        "recall_at_3": 0.8333333333333334
+      },
+      "中华人民共和国电子商务法": {
+        "total": 6,
+        "hits_at_3": 5,
+        "recall_at_3": 0.8333333333333334
+      },
+      "快递暂行条例（2025年修订）": {
+        "total": 6,
+        "hits_at_3": 5,
+        "recall_at_3": 0.8333333333333334
+      },
+      "网络购买商品七日无理由退货暂行办法": {
+        "total": 6,
+        "hits_at_3": 6,
+        "recall_at_3": 1.0
+      }
+    }
+  },
+  "quality": {
+    "documents": 84,
+    "chunks_by_source": {
+      "网络购买商品七日无理由退货暂行办法": 25,
+      "中华人民共和国电子商务法": 34,
+      "快递暂行条例（2025年修订）": 22,
+      "“数电发票”12月起全国推行！一文了解它有哪些优点": 3
+    },
+    "duplicate_content_groups": [],
+    "duplicate_title_groups": [],
+    "content_length_min": 26,
+    "content_length_max": 64,
+    "content_length_median": 42.0,
+    "shorter_than_20_chars": [],
+    "longer_than_500_chars": [],
+    "top3_unique_chunk_count": 36,
+    "not_returned_chunk_ids": [
+      "OFFICIAL-COURIER-003",
+      "OFFICIAL-COURIER-004",
+      "OFFICIAL-COURIER-008",
+      "OFFICIAL-COURIER-009",
+      "OFFICIAL-COURIER-010",
+      "OFFICIAL-COURIER-013",
+      "OFFICIAL-COURIER-016",
+      "OFFICIAL-COURIER-017",
+      "OFFICIAL-COURIER-018",
+      "OFFICIAL-COURIER-019",
+      "OFFICIAL-COURIER-020",
+      "OFFICIAL-COURIER-021",
+      "OFFICIAL-ECOM-001",
+      "OFFICIAL-ECOM-003",
+      "OFFICIAL-ECOM-004",
+      "OFFICIAL-ECOM-005",
+      "OFFICIAL-ECOM-008",
+      "OFFICIAL-ECOM-009",
+      "OFFICIAL-ECOM-010",
+      "OFFICIAL-ECOM-012",
+      "OFFICIAL-ECOM-014",
+      "OFFICIAL-ECOM-015",
+      "OFFICIAL-ECOM-016",
+      "OFFICIAL-ECOM-017",
+      "OFFICIAL-ECOM-019",
+      "OFFICIAL-ECOM-020",
+      "OFFICIAL-ECOM-021",
+      "OFFICIAL-ECOM-022",
+      "OFFICIAL-ECOM-024",
+      "OFFICIAL-ECOM-025",
+      "OFFICIAL-ECOM-026",
+      "OFFICIAL-ECOM-027",
+      "OFFICIAL-ECOM-028",
+      "OFFICIAL-ECOM-031",
+      "OFFICIAL-ECOM-032",
+      "OFFICIAL-ECOM-033",
+      "OFFICIAL-RETURN-004",
+      "OFFICIAL-RETURN-005",
+      "OFFICIAL-RETURN-009",
+      "OFFICIAL-RETURN-010",
+      "OFFICIAL-RETURN-011",
+      "OFFICIAL-RETURN-015",
+      "OFFICIAL-RETURN-016",
+      "OFFICIAL-RETURN-017",
+      "OFFICIAL-RETURN-018",
+      "OFFICIAL-RETURN-020",
+      "OFFICIAL-RETURN-023",
+      "OFFICIAL-RETURN-024"
+    ]
+  },
+  "results": [
+    {
+      "id": "return-01",
+      "query": "退货那七天是从签收当天开始算吗？",
+      "expected_source_id_prefix": "OFFICIAL-RETURN-",
+      "expected_section_keywords": [
+        "第十条"
+      ],
+      "reason": "询问无理由退货期间的起算日，退货办法第十条直接规定从签收次日起算。",
+      "expression": "边界",
+      "expected_source_title": "网络购买商品七日无理由退货暂行办法",
+      "top3": [
+        {
+          "id": "OFFICIAL-RETURN-002",
+          "title": "无理由退货的期限计算",
+          "section": "第十条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-RETURN-001",
+          "title": "网络购物退货的适用范围",
+          "section": "第二条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-003",
+          "title": "销售者与平台的退货义务",
+          "section": "第三条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "return-02",
+      "query": "我把盒子打开试了一下，不喜欢还能退货吗？",
+      "expected_source_id_prefix": "OFFICIAL-RETURN-",
+      "expected_section_keywords": [
+        "第八条"
+      ],
+      "reason": "合理开箱查验与商品完好标准属于退货办法第八条。",
+      "expression": "口语",
+      "expected_source_title": "网络购买商品七日无理由退货暂行办法",
+      "top3": [
+        {
+          "id": "OFFICIAL-RETURN-006",
+          "title": "法定不适用无理由退货的商品",
+          "section": "第六条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-007",
+          "title": "经确认可不适用退货的商品",
+          "section": "第七条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-021",
+          "title": "不适用退货商品的显著标注",
+          "section": "第二十条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": false,
+      "error_reason": null,
+      "section_error_reason": "expected_section_not_in_top3"
+    },
+    {
+      "id": "return-03",
+      "query": "按我的尺寸做的衣服，买完反悔能退货吗？",
+      "expected_source_id_prefix": "OFFICIAL-RETURN-",
+      "expected_section_keywords": [
+        "第六条"
+      ],
+      "reason": "按尺寸制作是定作商品的同义表达，对应法定不适用无理由退货的边界。",
+      "expression": "同义",
+      "expected_source_title": "网络购买商品七日无理由退货暂行办法",
+      "top3": [
+        {
+          "id": "OFFICIAL-RETURN-014",
+          "title": "完好退货的退款时限",
+          "section": "第十三条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-001",
+          "title": "网络购物退货的适用范围",
+          "section": "第二条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-002",
+          "title": "无理由退货的期限计算",
+          "section": "第十条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": false,
+      "error_reason": null,
+      "section_error_reason": "expected_section_not_in_top3"
+    },
+    {
+      "id": "return-04",
+      "query": "东西寄回店里了，好几天还没把钱给我，要等多久？",
+      "expected_source_id_prefix": "OFFICIAL-RETURN-",
+      "expected_section_keywords": [
+        "第十三条"
+      ],
+      "reason": "描述商家收到退回商品后的返款等待，对应退货办法第十三条；省略退款一词。",
+      "expression": "缺少关键词",
+      "expected_source_title": "网络购买商品七日无理由退货暂行办法",
+      "top3": [
+        {
+          "id": "OFFICIAL-RETURN-012",
+          "title": "退货凭证与退回时效",
+          "section": "第十一条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-008",
+          "title": "退回商品的完好标准",
+          "section": "第八条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-COURIER-007",
+          "title": "寄件信息要求",
+          "section": "第二十三条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": false,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": false,
+      "error_reason": null,
+      "section_error_reason": "expected_section_not_in_top3"
+    },
+    {
+      "id": "return-05",
+      "query": "不要这件了，送的小礼物也得一起寄回去吗？",
+      "expected_source_id_prefix": "OFFICIAL-RETURN-",
+      "expected_section_keywords": [
+        "第十二条"
+      ],
+      "reason": "小礼物是赠品的口语表达，退货时赠品及配件处理由第十二条规定。",
+      "expression": "缺少关键词",
+      "expected_source_title": "网络购买商品七日无理由退货暂行办法",
+      "top3": [
+        {
+          "id": "OFFICIAL-RETURN-012",
+          "title": "退货凭证与退回时效",
+          "section": "第十一条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-013",
+          "title": "赠品与配件的退回",
+          "section": "第十二条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-RETURN-025",
+          "title": "质量不符合要求的退货",
+          "section": "第三十五条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "return-06",
+      "query": "商家同意退货了，寄回去的运费谁出？",
+      "expected_source_id_prefix": "OFFICIAL-RETURN-",
+      "expected_section_keywords": [
+        "第十八条"
+      ],
+      "reason": "问题针对消费者退回商品的费用分担，而非快递服务赔偿。",
+      "expression": "常规",
+      "expected_source_title": "网络购买商品七日无理由退货暂行办法",
+      "top3": [
+        {
+          "id": "OFFICIAL-RETURN-019",
+          "title": "退货运费承担",
+          "section": "第十八条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-RETURN-003",
+          "title": "销售者与平台的退货义务",
+          "section": "第三条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-012",
+          "title": "退货凭证与退回时效",
+          "section": "第十一条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "ecom-01",
+      "query": "付款时多出来的服务已经默认勾选，这样行吗？",
+      "expected_source_id_prefix": "OFFICIAL-ECOM-",
+      "expected_section_keywords": [
+        "第十九条"
+      ],
+      "reason": "默认同意搭售服务的限制由电子商务法第十九条规定。",
+      "expression": "口语",
+      "expected_source_title": "中华人民共和国电子商务法",
+      "top3": [
+        {
+          "id": "OFFICIAL-COURIER-001",
+          "title": "快递服务的目的与适用范围",
+          "section": "第一条、第二条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-ECOM-007",
+          "title": "经营许可要求",
+          "section": "第十二条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-ECOM-013",
+          "title": "搭售的显著提示",
+          "section": "第十九条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": true,
+          "section_hit": true
+        }
+      ],
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "ecom-02",
+      "query": "网上店铺把我的差评删了，有规定管吗？",
+      "expected_source_id_prefix": "OFFICIAL-ECOM-",
+      "expected_section_keywords": [
+        "第三十九条"
+      ],
+      "reason": "用户评价不得被平台删除，对应电子商务法信用评价制度。",
+      "expression": "同义",
+      "expected_source_title": "中华人民共和国电子商务法",
+      "top3": [
+        {
+          "id": "OFFICIAL-RETURN-001",
+          "title": "网络购物退货的适用范围",
+          "section": "第二条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-006",
+          "title": "法定不适用无理由退货的商品",
+          "section": "第六条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-022",
+          "title": "平台退货规则的公示",
+          "section": "第二十二条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "section_hit_at_3": false,
+      "error_reason": "unexpected_source",
+      "section_error_reason": "expected_section_not_in_top3"
+    },
+    {
+      "id": "ecom-03",
+      "query": "买完东西的交易记录，平台至少得留几年？",
+      "expected_source_id_prefix": "OFFICIAL-ECOM-",
+      "expected_section_keywords": [
+        "第三十一条"
+      ],
+      "reason": "交易信息保存期限直接对应电子商务法第三十一条。",
+      "expression": "常规",
+      "expected_source_title": "中华人民共和国电子商务法",
+      "top3": [
+        {
+          "id": "OFFICIAL-ECOM-034",
+          "title": "争议处理中的交易记录",
+          "section": "第六十二条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-ECOM-018",
+          "title": "平台对商家的核验登记",
+          "section": "第二十七条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-003",
+          "title": "销售者与平台的退货义务",
+          "section": "第三条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": false,
+      "error_reason": null,
+      "section_error_reason": "expected_section_not_in_top3"
+    },
+    {
+      "id": "ecom-04",
+      "query": "网店说电子发票不如纸质的有效，是真的吗？",
+      "expected_source_id_prefix": "OFFICIAL-ECOM-",
+      "expected_section_keywords": [
+        "第十四条"
+      ],
+      "reason": "纸质与电子凭证法律效力属于电子商务法，并非数电格式及推广介绍。",
+      "expression": "边界",
+      "expected_source_title": "中华人民共和国电子商务法",
+      "top3": [
+        {
+          "id": "OFFICIAL-ECOM-002",
+          "title": "电子商务中的发票与凭证",
+          "section": "第十四条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-INVOICE-001",
+          "title": "数电发票的全国推广",
+          "section": "全国推广说明",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-INVOICE-002",
+          "title": "数电发票的开具交付与查验",
+          "section": "开票用票更便捷",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": false,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "ecom-05",
+      "query": "下单成功以后买卖关系就算定了吗？",
+      "expected_source_id_prefix": "OFFICIAL-ECOM-",
+      "expected_section_keywords": [
+        "第四十九条"
+      ],
+      "reason": "买卖关系成立是合同成立的口语表达，对应提交订单成功的规则。",
+      "expression": "同义",
+      "expected_source_title": "中华人民共和国电子商务法",
+      "top3": [
+        {
+          "id": "OFFICIAL-ECOM-029",
+          "title": "订单成功与合同成立",
+          "section": "第四十九条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-ECOM-030",
+          "title": "提交订单前的更正",
+          "section": "第五十条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-002",
+          "title": "无理由退货的期限计算",
+          "section": "第十条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "ecom-06",
+      "query": "购物网站准备关门，能今天说一声就停吗？",
+      "expected_source_id_prefix": "OFFICIAL-ECOM-",
+      "expected_section_keywords": [
+        "第十六条"
+      ],
+      "reason": "经营者终止经营前的公告时限对应第十六条；没有使用终止经营等规范用语。",
+      "expression": "缺少关键词",
+      "expected_source_title": "中华人民共和国电子商务法",
+      "top3": [
+        {
+          "id": "OFFICIAL-RETURN-001",
+          "title": "网络购物退货的适用范围",
+          "section": "第二条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-008",
+          "title": "退回商品的完好标准",
+          "section": "第八条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-ECOM-011",
+          "title": "商品信息真实准确",
+          "section": "第十七条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "section_hit_at_3": false,
+      "error_reason": null,
+      "section_error_reason": "expected_section_not_in_top3"
+    },
+    {
+      "id": "courier-01",
+      "query": "快递物流延迟了，寄的东西还少了一件，怎么赔？",
+      "expected_source_id_prefix": "OFFICIAL-COURIER-",
+      "expected_section_keywords": [
+        "第二十八条"
+      ],
+      "reason": "延误及内件短少时的赔偿依据属于快递条例第二十八条。",
+      "expression": "常规",
+      "expected_source_title": "快递暂行条例（2025年修订）",
+      "top3": [
+        {
+          "id": "OFFICIAL-COURIER-002",
+          "title": "快件延误丢失损毁的处理依据",
+          "section": "第二十八条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-COURIER-011",
+          "title": "无法投递快件的处理",
+          "section": "第二十七条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-COURIER-001",
+          "title": "快递服务的目的与适用范围",
+          "section": "第一条、第二条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "courier-02",
+      "query": "快递公司收到投诉后，最晚多久得答复我？",
+      "expected_source_id_prefix": "OFFICIAL-COURIER-",
+      "expected_section_keywords": [
+        "第二十九条"
+      ],
+      "reason": "快递企业投诉处理及告知时限为第二十九条规定的七日内。",
+      "expression": "常规",
+      "expected_source_title": "快递暂行条例（2025年修订）",
+      "top3": [
+        {
+          "id": "OFFICIAL-COURIER-012",
+          "title": "快递投诉的处理时限",
+          "section": "第二十九条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-COURIER-005",
+          "title": "统一品牌下的查询与投诉",
+          "section": "第二十条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-COURIER-022",
+          "title": "邮政管理部门的监督重点",
+          "section": "第四十六条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "courier-03",
+      "query": "包裹找不到收的人了，接下来该往哪送？",
+      "expected_source_id_prefix": "OFFICIAL-COURIER-",
+      "expected_section_keywords": [
+        "第二十七条"
+      ],
+      "reason": "无法交付给收件人的处置对应无法投递快件处理，省略物流及快递关键词。",
+      "expression": "缺少关键词",
+      "expected_source_title": "快递暂行条例（2025年修订）",
+      "top3": [
+        {
+          "id": "OFFICIAL-RETURN-006",
+          "title": "法定不适用无理由退货的商品",
+          "section": "第六条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-007",
+          "title": "经确认可不适用退货的商品",
+          "section": "第七条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-021",
+          "title": "不适用退货商品的显著标注",
+          "section": "第二十条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "section_hit_at_3": false,
+      "error_reason": "unexpected_source",
+      "section_error_reason": "expected_section_not_in_top3"
+    },
+    {
+      "id": "courier-04",
+      "query": "寄件填单之前，快递公司是不是要解释保价怎么算？",
+      "expected_source_id_prefix": "OFFICIAL-COURIER-",
+      "expected_section_keywords": [
+        "第二十二条"
+      ],
+      "reason": "寄件前的合同及保价提示义务由快递条例第二十二条规定。",
+      "expression": "口语",
+      "expected_source_title": "快递暂行条例（2025年修订）",
+      "top3": [
+        {
+          "id": "OFFICIAL-COURIER-006",
+          "title": "寄件前的合同与保价提示",
+          "section": "第二十二条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-COURIER-014",
+          "title": "收寄验视要求",
+          "section": "第三十二条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-COURIER-015",
+          "title": "快件安全检查",
+          "section": "第三十三条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "courier-05",
+      "query": "快递员把收件人的电话卖给别人了怎么办？",
+      "expected_source_id_prefix": "OFFICIAL-COURIER-",
+      "expected_section_keywords": [
+        "第三十五条"
+      ],
+      "reason": "快递从业人员泄露用户信息属于快递条例的专门安全要求。",
+      "expression": "边界",
+      "expected_source_title": "快递暂行条例（2025年修订）",
+      "top3": [
+        {
+          "id": "OFFICIAL-COURIER-011",
+          "title": "无法投递快件的处理",
+          "section": "第二十七条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-COURIER-007",
+          "title": "寄件信息要求",
+          "section": "第二十三条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-COURIER-001",
+          "title": "快递服务的目的与适用范围",
+          "section": "第一条、第二条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": false,
+      "error_reason": null,
+      "section_error_reason": "expected_section_not_in_top3"
+    },
+    {
+      "id": "courier-06",
+      "query": "寄东西不让工作人员打开看，能收走吗？",
+      "expected_source_id_prefix": "OFFICIAL-COURIER-",
+      "expected_section_keywords": [
+        "第三十二条"
+      ],
+      "reason": "拒绝内件验视时不得收寄，对应快递条例第三十二条，使用口语而非验视术语。",
+      "expression": "缺少关键词",
+      "expected_source_title": "快递暂行条例（2025年修订）",
+      "top3": [
+        {
+          "id": "OFFICIAL-COURIER-014",
+          "title": "收寄验视要求",
+          "section": "第三十二条",
+          "source_title": "快递暂行条例（2025年修订）",
+          "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=1768&Query=",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-RETURN-006",
+          "title": "法定不适用无理由退货的商品",
+          "section": "第六条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-007",
+          "title": "经确认可不适用退货的商品",
+          "section": "第七条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "invoice-01",
+      "query": "数电发票从哪一天开始全国都能推广用了？",
+      "expected_source_id_prefix": "OFFICIAL-INVOICE-",
+      "expected_section_keywords": [
+        "全国推广说明"
+      ],
+      "reason": "全国正式推广的起始日期在税务总局数电发票推广说明中。",
+      "expression": "常规",
+      "expected_source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+      "top3": [
+        {
+          "id": "OFFICIAL-INVOICE-001",
+          "title": "数电发票的全国推广",
+          "section": "全国推广说明",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-INVOICE-002",
+          "title": "数电发票的开具交付与查验",
+          "section": "开票用票更便捷",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-INVOICE-003",
+          "title": "数电发票格式与归档",
+          "section": "开票用票更便捷、入账归档一体化",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "invoice-02",
+      "query": "数字化的票据要去哪个税务网站开和验真？",
+      "expected_source_id_prefix": "OFFICIAL-INVOICE-",
+      "expected_section_keywords": [
+        "开票用票更便捷"
+      ],
+      "reason": "开具与查验的平台是统一电子税务局内的电子发票服务平台。",
+      "expression": "同义",
+      "expected_source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+      "top3": [
+        {
+          "id": "OFFICIAL-ECOM-006",
+          "title": "纳税义务",
+          "section": "第十一条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-INVOICE-002",
+          "title": "数电发票的开具交付与查验",
+          "section": "开票用票更便捷",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-ECOM-002",
+          "title": "电子商务中的发票与凭证",
+          "section": "第十四条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": false,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": false,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "invoice-03",
+      "query": "数电发票下载下来除了 PDF，还能拿什么格式？",
+      "expected_source_id_prefix": "OFFICIAL-INVOICE-",
+      "expected_section_keywords": [
+        "入账归档"
+      ],
+      "reason": "XML、PDF、OFD 格式由数电发票指南的归档知识块介绍。",
+      "expression": "常规",
+      "expected_source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+      "top3": [
+        {
+          "id": "OFFICIAL-INVOICE-003",
+          "title": "数电发票格式与归档",
+          "section": "开票用票更便捷、入账归档一体化",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-INVOICE-001",
+          "title": "数电发票的全国推广",
+          "section": "全国推广说明",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-INVOICE-002",
+          "title": "数电发票的开具交付与查验",
+          "section": "开票用票更便捷",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "invoice-04",
+      "query": "会计要把电子票据入账归档，下载的文件带数字签名吗？",
+      "expected_source_id_prefix": "OFFICIAL-INVOICE-",
+      "expected_section_keywords": [
+        "入账归档"
+      ],
+      "reason": "税务数字账户下载票据的数字签名及归档是数电指南的明确内容。",
+      "expression": "同义",
+      "expected_source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+      "top3": [
+        {
+          "id": "OFFICIAL-INVOICE-003",
+          "title": "数电发票格式与归档",
+          "section": "开票用票更便捷、入账归档一体化",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-ECOM-023",
+          "title": "平台规则的持续公示",
+          "section": "第三十三条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-ECOM-002",
+          "title": "电子商务中的发票与凭证",
+          "section": "第十四条",
+          "source_title": "中华人民共和国电子商务法",
+          "source_url": "https://www.samr.gov.cn/zfjcj/tzgg/art/2023/art_d337c3291e8b40459ca03dea54395856.html",
+          "source_hit": false,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    },
+    {
+      "id": "invoice-05",
+      "query": "不用纸的那张报销凭据，在网上哪里能查真假？",
+      "expected_source_id_prefix": "OFFICIAL-INVOICE-",
+      "expected_section_keywords": [
+        "开票用票更便捷"
+      ],
+      "reason": "按电子票据查验渠道解释，预期数电指南；表达有歧义，真实服务仍需先澄清票据类型。",
+      "expression": "缺少关键词",
+      "expected_source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+      "top3": [
+        {
+          "id": "OFFICIAL-RETURN-001",
+          "title": "网络购物退货的适用范围",
+          "section": "第二条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-006",
+          "title": "法定不适用无理由退货的商品",
+          "section": "第六条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-RETURN-007",
+          "title": "经确认可不适用退货的商品",
+          "section": "第七条",
+          "source_title": "网络购买商品七日无理由退货暂行办法",
+          "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+          "source_hit": false,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": false,
+      "hit_at_3": false,
+      "section_hit_at_3": false,
+      "error_reason": "unexpected_source",
+      "section_error_reason": "expected_section_not_in_top3"
+    },
+    {
+      "id": "invoice-06",
+      "query": "数电发票是不是只能存成 XML，不能用 OFD？",
+      "expected_source_id_prefix": "OFFICIAL-INVOICE-",
+      "expected_section_keywords": [
+        "入账归档"
+      ],
+      "reason": "是否仅支持 XML 的格式边界，应命中指南中保留 PDF、OFD 的说明。",
+      "expression": "边界",
+      "expected_source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+      "top3": [
+        {
+          "id": "OFFICIAL-INVOICE-003",
+          "title": "数电发票格式与归档",
+          "section": "开票用票更便捷、入账归档一体化",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": true,
+          "section_hit": true
+        },
+        {
+          "id": "OFFICIAL-INVOICE-001",
+          "title": "数电发票的全国推广",
+          "section": "全国推广说明",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": true,
+          "section_hit": false
+        },
+        {
+          "id": "OFFICIAL-INVOICE-002",
+          "title": "数电发票的开具交付与查验",
+          "section": "开票用票更便捷",
+          "source_title": "“数电发票”12月起全国推行！一文了解它有哪些优点",
+          "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5236173/content.html",
+          "source_hit": true,
+          "section_hit": false
+        }
+      ],
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "section_hit_at_3": true,
+      "error_reason": null,
+      "section_error_reason": null
+    }
+  ]
+}

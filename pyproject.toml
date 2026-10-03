@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ops-pilot"
+version = "0.1.0"
+description = "Auditable enterprise knowledge-base and ticket-handling agent"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "langgraph>=0.2,<2.0",
+  "uvicorn[standard]>=0.30,<1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.27,<1.0",
+  "pytest>=8.0,<9.0",
+]
+live = ["langchain-openai>=0.3,<2.0"]
+rag = ["torch>=2.6,<3", "transformers>=4.45,<5", "huggingface-hub>=0.26,<1", "faiss-cpu>=1.10,<2", "numpy>=1.26,<3", "psutil>=6,<8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]

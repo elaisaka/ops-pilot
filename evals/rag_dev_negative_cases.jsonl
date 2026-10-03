@@ -1,0 +1,8 @@
+{"id":"rag-dev-n1","query":"怎么用循环把数组从大到小排列？","expected_empty":true,"reason":"编程问题，不是售后制度。"}
+{"id":"rag-dev-n2","query":"午饭后胃痛需要立刻吃止痛片吗？","expected_empty":true,"reason":"医疗建议不在法规语料范围。"}
+{"id":"rag-dev-n3","query":"孩子背乘法口诀总记错，有什么办法？","expected_empty":true,"reason":"教育学习问题。"}
+{"id":"rag-dev-n4","query":"浏览器历史记录怎么清空才能保护隐私？","expected_empty":true,"reason":"软件操作，非用户信息法律规则。"}
+{"id":"rag-dev-n5","query":"明天黄金价格会上涨吗？","expected_empty":true,"reason":"投资市场预测。"}
+{"id":"rag-dev-n6","query":"请写一段登山看日出的散文。","expected_empty":true,"reason":"创作任务。"}
+{"id":"rag-dev-n7","query":"明晚青岛海边风大不大？","expected_empty":true,"reason":"天气预测。"}
+{"id":"rag-dev-n8","query":"这个事情还要等几天才行？","expected_empty":true,"reason":"缺少具体事项。"}

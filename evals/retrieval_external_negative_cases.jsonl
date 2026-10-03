@@ -1,0 +1,12 @@
+{"id":"external-n1","query":"Java中怎样保存和读取用户的游戏进度？","expected_empty":true,"reason":"游戏编程，没有电商法规解答依据。","expression":"编程"}
+{"id":"external-n2","query":"数据库连接突然中断应该怎么处理异常？","expected_empty":true,"reason":"软件异常处理问题不属于售后制度。","expression":"编程"}
+{"id":"external-n3","query":"孩子发烧后什么时间吃药比较安全？","expected_empty":true,"reason":"医疗给药建议超出知识范围。","expression":"医疗"}
+{"id":"external-n4","query":"医生开的检查项目要不要空腹去做？","expected_empty":true,"reason":"医学检查准备不是快件检查。","expression":"医疗"}
+{"id":"external-n5","query":"我记不住英语单词，有什么学习方法？","expected_empty":true,"reason":"学习方法无售后法规依据。","expression":"学习"}
+{"id":"external-n6","query":"电脑默认打开文件的程序在哪儿更改？","expected_empty":true,"reason":"系统文件关联设置不属于电子商务规则。","expression":"系统设置"}
+{"id":"external-n7","query":"手机上的定位权限怎么关闭才保护隐私？","expected_empty":true,"reason":"操作系统权限设置，法规块不能回答具体操作。","expression":"系统设置"}
+{"id":"external-n8","query":"现在买哪只基金比较划算，多久能回本？","expected_empty":true,"reason":"投资选择及回报预测没有知识依据。","expression":"金融建议"}
+{"id":"external-n9","query":"帮我想一段给朋友庆生的押韵祝福。","expected_empty":true,"reason":"文学创作无需法规检索。","expression":"创作"}
+{"id":"external-n10","query":"后天成都气温大概多少度？","expected_empty":true,"reason":"天气预测不在本地知识库。","expression":"天气"}
+{"id":"external-n11","query":"这样算正常吗，能帮我判断一下不？","expected_empty":true,"reason":"缺少事件信息无法确定依据。","expression":"泛化不明"}
+{"id":"external-n12","query":"那边还没给我弄完，我下一步做什么？","expected_empty":true,"reason":"没有事项和主体，不能推定为售后业务。","expression":"泛化不明"}

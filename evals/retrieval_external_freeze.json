@@ -1,0 +1,13 @@
+{
+  "frozen_at": "2026-09-22T13:37:06.0947163+08:00",
+  "protocol": "本轮题目冻结前未读取旧题集、旧结果、检索代码；只阅读两份知识来源文件。冻结时仅对检索代码计算SHA-256，没有打开内容。",
+  "independence_limitation": "同一对话中已有此前开发和评测上下文，不能声称独立第三方或完全未见历史；本轮执行先冻结后评测，不根据结果修改题目或检索。",
+  "sha256": {
+    "evals/retrieval_external_cases.jsonl": "77b1ede2865527a95cb1da221ffcbc0c1d8406e3030f054c74c0f23de0a4d8ec",
+    "evals/retrieval_external_negative_cases.jsonl": "2568a4a6a5f650349b641dea75a7426881207d9071fdb54b0c15e9890494bbbc",
+    "knowledge/official_sources.jsonl": "0e92ca11b33d84110b6c4e38a44ba0effaa691685164a36eeb4207e3e857eeaf",
+    "knowledge/source_registry.json": "65f7956d79c9c69131ff3f012ea0fa753ca271a70e62313fdc4f04529d35bde7",
+    "app/retrieval.py": "e046d49d2ca8d542d1831a7aca82fc332dff095884813b389b8466c9833ae344",
+    "app/store.py": "43ae56410b55530e763728d8476a9d48ed00ce67992e1e506503ca520366375f"
+  }
+}

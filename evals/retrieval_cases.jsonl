@@ -1,0 +1,24 @@
+{"id":"return-01","query":"退货那七天是从签收当天开始算吗？","expected_source_id_prefix":"OFFICIAL-RETURN-","expected_section_keywords":["第十条"],"reason":"询问无理由退货期间的起算日，退货办法第十条直接规定从签收次日起算。","expression":"边界"}
+{"id":"return-02","query":"我把盒子打开试了一下，不喜欢还能退货吗？","expected_source_id_prefix":"OFFICIAL-RETURN-","expected_section_keywords":["第八条"],"reason":"合理开箱查验与商品完好标准属于退货办法第八条。","expression":"口语"}
+{"id":"return-03","query":"按我的尺寸做的衣服，买完反悔能退货吗？","expected_source_id_prefix":"OFFICIAL-RETURN-","expected_section_keywords":["第六条"],"reason":"按尺寸制作是定作商品的同义表达，对应法定不适用无理由退货的边界。","expression":"同义"}
+{"id":"return-04","query":"东西寄回店里了，好几天还没把钱给我，要等多久？","expected_source_id_prefix":"OFFICIAL-RETURN-","expected_section_keywords":["第十三条"],"reason":"描述商家收到退回商品后的返款等待，对应退货办法第十三条；省略退款一词。","expression":"缺少关键词"}
+{"id":"return-05","query":"不要这件了，送的小礼物也得一起寄回去吗？","expected_source_id_prefix":"OFFICIAL-RETURN-","expected_section_keywords":["第十二条"],"reason":"小礼物是赠品的口语表达，退货时赠品及配件处理由第十二条规定。","expression":"缺少关键词"}
+{"id":"return-06","query":"商家同意退货了，寄回去的运费谁出？","expected_source_id_prefix":"OFFICIAL-RETURN-","expected_section_keywords":["第十八条"],"reason":"问题针对消费者退回商品的费用分担，而非快递服务赔偿。","expression":"常规"}
+{"id":"ecom-01","query":"付款时多出来的服务已经默认勾选，这样行吗？","expected_source_id_prefix":"OFFICIAL-ECOM-","expected_section_keywords":["第十九条"],"reason":"默认同意搭售服务的限制由电子商务法第十九条规定。","expression":"口语"}
+{"id":"ecom-02","query":"网上店铺把我的差评删了，有规定管吗？","expected_source_id_prefix":"OFFICIAL-ECOM-","expected_section_keywords":["第三十九条"],"reason":"用户评价不得被平台删除，对应电子商务法信用评价制度。","expression":"同义"}
+{"id":"ecom-03","query":"买完东西的交易记录，平台至少得留几年？","expected_source_id_prefix":"OFFICIAL-ECOM-","expected_section_keywords":["第三十一条"],"reason":"交易信息保存期限直接对应电子商务法第三十一条。","expression":"常规"}
+{"id":"ecom-04","query":"网店说电子发票不如纸质的有效，是真的吗？","expected_source_id_prefix":"OFFICIAL-ECOM-","expected_section_keywords":["第十四条"],"reason":"纸质与电子凭证法律效力属于电子商务法，并非数电格式及推广介绍。","expression":"边界"}
+{"id":"ecom-05","query":"下单成功以后买卖关系就算定了吗？","expected_source_id_prefix":"OFFICIAL-ECOM-","expected_section_keywords":["第四十九条"],"reason":"买卖关系成立是合同成立的口语表达，对应提交订单成功的规则。","expression":"同义"}
+{"id":"ecom-06","query":"购物网站准备关门，能今天说一声就停吗？","expected_source_id_prefix":"OFFICIAL-ECOM-","expected_section_keywords":["第十六条"],"reason":"经营者终止经营前的公告时限对应第十六条；没有使用终止经营等规范用语。","expression":"缺少关键词"}
+{"id":"courier-01","query":"快递物流延迟了，寄的东西还少了一件，怎么赔？","expected_source_id_prefix":"OFFICIAL-COURIER-","expected_section_keywords":["第二十八条"],"reason":"延误及内件短少时的赔偿依据属于快递条例第二十八条。","expression":"常规"}
+{"id":"courier-02","query":"快递公司收到投诉后，最晚多久得答复我？","expected_source_id_prefix":"OFFICIAL-COURIER-","expected_section_keywords":["第二十九条"],"reason":"快递企业投诉处理及告知时限为第二十九条规定的七日内。","expression":"常规"}
+{"id":"courier-03","query":"包裹找不到收的人了，接下来该往哪送？","expected_source_id_prefix":"OFFICIAL-COURIER-","expected_section_keywords":["第二十七条"],"reason":"无法交付给收件人的处置对应无法投递快件处理，省略物流及快递关键词。","expression":"缺少关键词"}
+{"id":"courier-04","query":"寄件填单之前，快递公司是不是要解释保价怎么算？","expected_source_id_prefix":"OFFICIAL-COURIER-","expected_section_keywords":["第二十二条"],"reason":"寄件前的合同及保价提示义务由快递条例第二十二条规定。","expression":"口语"}
+{"id":"courier-05","query":"快递员把收件人的电话卖给别人了怎么办？","expected_source_id_prefix":"OFFICIAL-COURIER-","expected_section_keywords":["第三十五条"],"reason":"快递从业人员泄露用户信息属于快递条例的专门安全要求。","expression":"边界"}
+{"id":"courier-06","query":"寄东西不让工作人员打开看，能收走吗？","expected_source_id_prefix":"OFFICIAL-COURIER-","expected_section_keywords":["第三十二条"],"reason":"拒绝内件验视时不得收寄，对应快递条例第三十二条，使用口语而非验视术语。","expression":"缺少关键词"}
+{"id":"invoice-01","query":"数电发票从哪一天开始全国都能推广用了？","expected_source_id_prefix":"OFFICIAL-INVOICE-","expected_section_keywords":["全国推广说明"],"reason":"全国正式推广的起始日期在税务总局数电发票推广说明中。","expression":"常规"}
+{"id":"invoice-02","query":"数字化的票据要去哪个税务网站开和验真？","expected_source_id_prefix":"OFFICIAL-INVOICE-","expected_section_keywords":["开票用票更便捷"],"reason":"开具与查验的平台是统一电子税务局内的电子发票服务平台。","expression":"同义"}
+{"id":"invoice-03","query":"数电发票下载下来除了 PDF，还能拿什么格式？","expected_source_id_prefix":"OFFICIAL-INVOICE-","expected_section_keywords":["入账归档"],"reason":"XML、PDF、OFD 格式由数电发票指南的归档知识块介绍。","expression":"常规"}
+{"id":"invoice-04","query":"会计要把电子票据入账归档，下载的文件带数字签名吗？","expected_source_id_prefix":"OFFICIAL-INVOICE-","expected_section_keywords":["入账归档"],"reason":"税务数字账户下载票据的数字签名及归档是数电指南的明确内容。","expression":"同义"}
+{"id":"invoice-05","query":"不用纸的那张报销凭据，在网上哪里能查真假？","expected_source_id_prefix":"OFFICIAL-INVOICE-","expected_section_keywords":["开票用票更便捷"],"reason":"按电子票据查验渠道解释，预期数电指南；表达有歧义，真实服务仍需先澄清票据类型。","expression":"缺少关键词"}
+{"id":"invoice-06","query":"数电发票是不是只能存成 XML，不能用 OFD？","expected_source_id_prefix":"OFFICIAL-INVOICE-","expected_section_keywords":["入账归档"],"reason":"是否仅支持 XML 的格式边界，应命中指南中保留 PDF、OFD 的说明。","expression":"边界"}

@@ -1,0 +1,12 @@
+{"id":"dev-r1","query":"定做的戒指可以退钱吗？","expected_source_id_prefix":"OFFICIAL-RETURN-","expected_section_keywords":["第六条"],"reason":"定做是定作的常用表达，涉及无理由退货例外。"}
+{"id":"dev-r2","query":"开箱试一下功能还能退吗？","expected_source_id_prefix":"OFFICIAL-RETURN-","expected_section_keywords":["第八条"],"reason":"合理查验商品功能与完好认定。"}
+{"id":"dev-r3","query":"退货邮费商家承诺全包还算数吗？","expected_source_id_prefix":"OFFICIAL-RETURN-","expected_section_keywords":["第十八条"],"reason":"运费另有约定时按约定处理。"}
+{"id":"dev-e1","query":"平台能随便抹掉差评吗？","expected_source_id_prefix":"OFFICIAL-ECOM-","expected_section_keywords":["第三十九条"],"reason":"评价制度禁止删除消费者评价。"}
+{"id":"dev-e2","query":"店家靠刷单编造销量误导顾客行不行？","expected_source_id_prefix":"OFFICIAL-ECOM-","expected_section_keywords":["第十七条"],"reason":"虚构交易、编造评价不得误导消费者。"}
+{"id":"dev-e3","query":"关店前需要提前三十日告诉买家吗？","expected_source_id_prefix":"OFFICIAL-ECOM-","expected_section_keywords":["第十六条"],"reason":"终止经营公告时限，三十日来自正文。"}
+{"id":"dev-c1","query":"包裹送不到目的地，能退给寄件人吗？","expected_source_id_prefix":"OFFICIAL-COURIER-","expected_section_keywords":["第二十七条"],"reason":"无法投递的处置方式。"}
+{"id":"dev-c2","query":"快递漏件了，没保价该按什么规则赔？","expected_source_id_prefix":"OFFICIAL-COURIER-","expected_section_keywords":["第二十八条"],"reason":"内件短少与未保价赔偿。"}
+{"id":"dev-c3","query":"拒绝验视内件，寄件企业还可以收寄吗？","expected_source_id_prefix":"OFFICIAL-COURIER-","expected_section_keywords":["第三十二条"],"reason":"验视与拒绝收寄要求包含在正文。"}
+{"id":"dev-i1","query":"电子票据验真在哪个平台操作？","expected_source_id_prefix":"OFFICIAL-INVOICE-","expected_section_keywords":["开票用票更便捷"],"reason":"电子税务局开具和查验渠道。"}
+{"id":"dev-i2","query":"电子票存档时能选 OFD 文件吗？","expected_source_id_prefix":"OFFICIAL-INVOICE-","expected_section_keywords":["入账归档"],"reason":"文件格式及归档流程。"}
+{"id":"dev-i3","query":"全面数字化电子发票是在2024年12月1日推广的吗？","expected_source_id_prefix":"OFFICIAL-INVOICE-","expected_section_keywords":["全国推广说明"],"reason":"推广具体日期出现在指南正文。"}

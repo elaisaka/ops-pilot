@@ -1,0 +1,12 @@
+{
+  "frozen_at": "2026-09-20T20:03:56.9911413+08:00",
+  "protocol": "Cases created using corpus and source registry before reading evaluation code in this turn. Prior conversation contains earlier implementation context; this is not a fully unseen independent-author blind test.",
+  "sha256": {
+    "evals/retrieval_blind_cases.jsonl": "bdc73e9d5a5ed0fb063f1de02341baf2b163f0e1a006456800cd68d61ebf1698",
+    "evals/retrieval_blind_negative_cases.jsonl": "4475b14e116a4f0afeac3e648ced162d342e3c83e3b7b5f6445d732aab842f23",
+    "knowledge/official_sources.jsonl": "0e92ca11b33d84110b6c4e38a44ba0effaa691685164a36eeb4207e3e857eeaf",
+    "knowledge/source_registry.json": "65f7956d79c9c69131ff3f012ea0fa753ca271a70e62313fdc4f04529d35bde7",
+    "app/store.py": "43ae56410b55530e763728d8476a9d48ed00ce67992e1e506503ca520366375f",
+    "app/retrieval.py": "e046d49d2ca8d542d1831a7aca82fc332dff095884813b389b8466c9833ae344"
+  }
+}

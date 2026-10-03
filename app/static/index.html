@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpsPilot | 可审计售后 Agent</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#6f7890; --brand:#5b4bff; --soft:#f4f5ff; --border:#e5e7ef; }
+    * { box-sizing:border-box } body { margin:0; font:15px/1.55 Inter, "Microsoft YaHei", sans-serif; color:var(--ink); background:#fafbff; }
+    header { background:linear-gradient(115deg,#1c2041,#5b4bff); color:white; padding:28px max(24px,calc((100vw - 1100px)/2)); }
+    header h1 { margin:0; font-size:25px } header p { margin:4px 0 0; opacity:.8 }
+    main { max-width:1100px; margin:24px auto; padding:0 20px; display:grid; grid-template-columns:1.6fr .9fr; gap:20px; }
+    section { background:white; border:1px solid var(--border); border-radius:14px; padding:20px; box-shadow:0 8px 28px #2e36800d; }
+    h2 { font-size:16px; margin:0 0 14px } #messages { min-height:310px; max-height:520px; overflow:auto; display:flex; flex-direction:column; gap:12px; }
+    .message { padding:12px 14px; border-radius:10px; max-width:92%; white-space:pre-wrap } .user { align-self:flex-end; background:#e8e6ff } .assistant { background:#f4f6fa }
+    .meta { margin-top:8px; color:var(--muted); font-size:12px } form { display:flex; gap:8px; margin-top:16px } input { flex:1; border:1px solid var(--border); border-radius:8px; padding:11px; font:inherit }
+    button { background:var(--brand); color:white; border:0; border-radius:8px; padding:10px 13px; font:inherit; cursor:pointer } button.reject { background:#e04d65 } .card { border-top:1px solid var(--border); padding:12px 0 } .tag { display:inline-block; background:var(--soft); color:#4e43c7; border-radius:99px; padding:2px 8px; font-size:12px; margin:3px 3px 0 0 }
+    .hint { color:var(--muted); font-size:13px } .meta a { color:#4e43c7; text-decoration:none } .meta a:hover { text-decoration:underline } .metrics { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin:14px 0 18px } .metric { background:#f7f7ff; border-radius:8px; padding:9px; font-size:12px; color:var(--muted) } .metric b { display:block; color:var(--ink); font-size:18px } .ticket-actions { margin-top:7px } .ticket-actions button { font-size:12px; padding:6px 9px } @media (max-width:760px) { main { grid-template-columns:1fr } }
+  </style>
+</head>
+<body>
+  <header><h1>OpsPilot</h1><p>可审计企业知识库与工单处置 Agent · 演示模式</p></header>
+  <main>
+    <section style="grid-column:1/-1">
+      <h2>本地演示身份</h2>
+      <p class="hint">提问无需登录。运营处理工单，主管决定审批，审计员只读查看。凭据从本机 data/demo-credentials.json 获取，不要分享。</p>
+      <input id="credential" type="password" autocomplete="off" placeholder="粘贴本地演示凭据" aria-label="本地演示凭据" />
+      <button id="login" type="button">登录 / 切换身份</button><button id="logout" type="button">退出</button>
+      <span id="identity">未登录</span>
+      <button id="view-audit" type="button">查看本会话审计</button>
+      <pre id="audit-view" style="white-space:pre-wrap;max-height:240px;overflow:auto"></pre>
+    </section>
+    <section><h2>用户会话</h2><div id="messages"></div>
+      <form id="chat"><input id="input" autocomplete="off" placeholder="例如：订单 ORD-10001 我要退款" /><button id="send">发送</button></form>
+      <p id="submission-status" class="hint" aria-live="polite"></p>
+      <button id="new-submission" type="button" hidden>放弃重试，另发新请求</button>
+      <p class="hint">可试：退款、物流异常、电子发票；退款只会创建人工审批，不会自动执行。</p>
+    </section>
+    <section><h2>运营概览</h2><div id="metrics" class="metrics"></div><h2>审批队列</h2><div id="approvals" class="hint">暂无待审批项</div><h2 style="margin-top:22px">工单队列</h2><div id="tickets" class="hint">暂无工单</div><h2 style="margin-top:22px">模拟订单池</h2><div id="orders" class="hint">加载中</div></section>
+  </main>
+  <script>
+    let conversationId;
+    let pendingSubmission = null;
+    let submitting = false;
+    let authToken = ''; // Memory only: never persist credentials in browser storage.
+    const pendingStorageKey = 'ops-pilot.pending-submission.v1';
+    const byId = id => document.getElementById(id);
+    const escapeHtml = value => String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+    async function request(url, options) {
+      const response = await fetch(url, {...options, headers:{...options?.headers, ...(authToken ? {'Authorization':'Bearer '+authToken} : {})}});
+      if (!response.ok) {
+        const detail = (await response.json()).detail;
+        throw new Error(typeof detail === 'string' ? detail : detail?.message || '请求失败，请核对输入后重试');
+      }
+      return response.json();
+    }
+    function addMessage(role, text, metadata='') { const el=document.createElement('div'); el.className=`message ${role}`; el.innerHTML=`${escapeHtml(text)}${metadata?`<div class="meta">${metadata}</div>`:''}`; byId('messages').append(el); el.scrollIntoView({behavior:'smooth'}); }
+    function retrievalSummary(trace) {
+      if (!trace) return '本次未执行检索';
+      const label = trace.retriever === 'vector_rag' ? '向量 RAG' : '关键词检索';
+      return `${label} · 命中 ${trace.document_ids.length} 篇 · ${Number(trace.elapsed_ms).toFixed(1)} ms`;
+    }
+    async function refreshOperations() {
+      const [approvals,tickets,orders,dashboard] = await Promise.all([request('/api/approvals'),request('/api/tickets'),request('/api/orders?limit=5'),request('/api/dashboard')]);
+      byId('metrics').innerHTML = `<div class="metric">模拟订单<b>${dashboard.orders.total}</b></div><div class="metric">知识块<b>${dashboard.knowledge_documents}</b></div><div class="metric">待审批<b>${dashboard.pending_approvals}</b></div><div class="metric">待处理工单<b>${(dashboard.tickets.by_status.open || 0) + (dashboard.tickets.by_status.in_progress || 0)}</b></div>`;
+      byId('approvals').innerHTML = approvals.length ? approvals.map(a => `<div class="card"><b>${a.action_type} · ${a.payload.order_id}</b><br>¥${a.payload.amount}，${escapeHtml(a.reason)}<div><button onclick="decide('${a.id}',true)">批准</button> <button class="reject" onclick="decide('${a.id}',false)">拒绝</button></div></div>`).join('') : '暂无待审批项';
+      byId('tickets').innerHTML = tickets.length ? tickets.map(t => `<div class="card"><b>${t.id}</b><br><span class="tag">${t.category}</span><span class="tag">${t.priority}</span><span class="tag">${t.status}</span><br>${escapeHtml(t.summary)}${t.assignee ? `<div class="meta">负责人：${escapeHtml(t.assignee)}</div>` : ''}${t.resolution_note ? `<div class="meta">处理结果：${escapeHtml(t.resolution_note)}</div>` : ''}${t.status === 'open' ? `<div class="ticket-actions"><button onclick="startTicket('${t.id}')">接单处理</button></div>` : ''}${t.status === 'in_progress' ? `<div class="ticket-actions"><button onclick="resolveTicket('${t.id}')">完成工单</button></div>` : ''}</div>`).join('') : '暂无工单';
+      byId('orders').innerHTML = orders.map(o => `<div class="card"><b>${o.id}</b> · ${escapeHtml(o.product_name)}<br><span class="tag">${escapeHtml(o.status)}</span><span class="tag">${escapeHtml(o.after_sale_status)}</span><div class="meta">¥${o.amount} · ${escapeHtml(o.tracking_number || '待分配运单')}</div></div>`).join('');
+    }
+    window.decide = async (id, approved) => { await request(`/api/approvals/${id}/decision`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({approved,decided_by:'demo-operator'})}); await refreshOperations(); };
+    window.startTicket = async id => { await request(`/api/tickets/${id}`,{method:'PATCH',headers:{'content-type':'application/json'},body:JSON.stringify({status:'in_progress',assignee:'demo-operator'})}); await refreshOperations(); };
+    window.resolveTicket = async id => { const resolutionNote = window.prompt('填写处理结果'); if (!resolutionNote) return; await request(`/api/tickets/${id}`,{method:'PATCH',headers:{'content-type':'application/json'},body:JSON.stringify({status:'resolved',resolution_note:resolutionNote})}); await refreshOperations(); };
+    function clearOperations() {
+      for (const id of ['metrics','approvals','tickets','orders','audit-view']) byId(id).textContent = '';
+    }
+    byId('login').addEventListener('click', async () => {
+      authToken = byId('credential').value.trim(); byId('credential').value = ''; clearOperations();
+      try { const user = await request('/api/auth/me'); byId('identity').textContent = `${user.name} (${user.role})`; await refreshOperations(); }
+      catch (error) { authToken = ''; byId('identity').textContent = error.message; }
+    });
+    byId('logout').addEventListener('click', () => { authToken=''; clearOperations(); byId('identity').textContent='未登录'; });
+    byId('view-audit').addEventListener('click', async () => {
+      try { byId('audit-view').textContent=JSON.stringify(await request(`/api/conversations/${conversationId}/audit`),null,2); }
+      catch(error) { byId('audit-view').textContent=error.message; }
+    });
+    for (const action of ['decide','startTicket','resolveTicket']) {
+      const handler=window[action];
+      window[action]=async(...args)=>{try {await handler(...args);} catch(error) {addMessage('assistant',error.message);} };
+    }
+    function savePendingSubmission() {
+      if (pendingSubmission) sessionStorage.setItem(pendingStorageKey, JSON.stringify(pendingSubmission));
+      else sessionStorage.removeItem(pendingStorageKey);
+    }
+    function loadPendingSubmission() {
+      const value = sessionStorage.getItem(pendingStorageKey);
+      if (!value) return null;
+      const pending = JSON.parse(value);
+      if (!pending || typeof pending.conversationId !== 'string' || typeof pending.message !== 'string'
+          || typeof pending.key !== 'string' || !/^[A-Za-z0-9._:-]{1,128}$/.test(pending.key)) {
+        throw new Error('无法恢复上次提交，请检查浏览器会话存储。');
+      }
+      return pending;
+    }
+    function renderSubmissionControls() {
+      byId('send').disabled = submitting || !conversationId;
+      byId('send').textContent = submitting ? '处理中…' : pendingSubmission ? '重试原提交' : '发送';
+      byId('input').readOnly = submitting || !!pendingSubmission;
+      if (pendingSubmission) byId('input').value = pendingSubmission.message;
+      byId('new-submission').hidden = !pendingSubmission;
+      byId('new-submission').disabled = submitting;
+      byId('submission-status').textContent = pendingSubmission
+        ? '原提交已保留。失败或刷新后重试会复用同一标识；另发新请求不会撤销已保存的工单或审批。' : '';
+    }
+    async function submitMessage(event) {
+      event.preventDefault();
+      if (submitting || !conversationId) return;
+      const text = pendingSubmission ? pendingSubmission.message : byId('input').value.trim();
+      if (!text) return;
+      const fresh = !pendingSubmission;
+      if (fresh) pendingSubmission = {conversationId, key: crypto.randomUUID(), message: text};
+      try { savePendingSubmission(); } catch (_) {
+        addMessage('assistant', '无法保存重试标识，本次尚未提交。请开启浏览器会话存储后再试。');
+        renderSubmissionControls(); return;
+      }
+      if (fresh) addMessage('user', text);
+      submitting = true; renderSubmissionControls();
+      try {
+        const attempt = pendingSubmission;
+        const result = await request(`/api/conversations/${attempt.conversationId}/messages`, {
+          method:'POST', headers:{'content-type':'application/json', 'Idempotency-Key':attempt.key},
+          body:JSON.stringify({message:attempt.message})
+        });
+        const refs=result.citations.map(c => c.source_url ? `<a href="${escapeHtml(c.source_url)}" target="_blank" rel="noreferrer">${escapeHtml(c.document_id)} · ${escapeHtml(c.section)}</a>` : escapeHtml(c.document_id)).join(' · ');
+        addMessage('assistant',result.message,`${escapeHtml(retrievalSummary(result.retrieval))}${refs?`<br>引用：${refs}`:''}`);
+        // Clear only after the message response arrives. An operations-panel error
+        // must not turn a completed submission into an accidental new retry.
+        sessionStorage.removeItem(pendingStorageKey);
+        pendingSubmission = null;
+        byId('input').value = '';
+      } catch(error) {
+        addMessage('assistant', `本次未完成确认：${error.message}。请重试原提交。`);
+      } finally {
+        submitting = false; renderSubmissionControls();
+      }
+      refreshOperations().catch(() => addMessage('assistant', '运营面板刷新失败，请稍后刷新页面；消息提交状态不受影响。'));
+    }
+    byId('chat').addEventListener('submit', submitMessage);
+    byId('new-submission').addEventListener('click', () => {
+      if (submitting) return;
+      try { sessionStorage.removeItem(pendingStorageKey); } catch (_) { return; }
+      pendingSubmission = null; byId('input').value = ''; renderSubmissionControls();
+    });
+    (async()=>{
+      try {
+        pendingSubmission = loadPendingSubmission();
+        conversationId = pendingSubmission ? pendingSubmission.conversationId
+          : (await request('/api/conversations',{method:'POST'})).conversation_id;
+        addMessage('assistant', pendingSubmission ? '发现尚未确认的提交，可点击“重试原提交”恢复结果。' : '你好，我是 OpsPilot。请告诉我需要查询的制度或售后问题。');
+        renderSubmissionControls();
+        refreshOperations().catch(() => addMessage('assistant', '运营面板暂时不可用。'));
+      } catch (_) { byId('send').disabled = true; addMessage('assistant', '会话初始化失败，请检查连接和浏览器会话存储后刷新。'); }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{"id":"negative-01","query":"周末去杭州会下雨吗，要带伞不？","expected_empty":true,"reason":"本地法规库不提供天气预报。","expression":"天气"}
+{"id":"negative-02","query":"番茄炒蛋先放盐还是先放糖？","expected_empty":true,"reason":"烹饪技巧不在知识库范围。","expression":"菜谱"}
+{"id":"negative-03","query":"写四句关于月亮和故乡的诗给我。","expected_empty":true,"reason":"创作任务没有法规检索依据。","expression":"诗歌"}
+{"id":"negative-04","query":"Python怎么删除列表里的重复数据？","expected_empty":true,"reason":"程序设计问题，删除及数据等词不应触发用户数据法规。","expression":"编程"}
+{"id":"negative-05","query":"头疼三天了，吃什么药安全？","expected_empty":true,"reason":"医疗建议无依据，安全一词不构成业务关联。","expression":"医疗"}
+{"id":"negative-06","query":"那个到底多久才能弄好？","expected_empty":true,"reason":"缺少事项与场景，无法判断来源。","expression":"证据不足"}
+{"id":"negative-07","query":"如何查询更正电脑上的系统时间？","expected_empty":true,"reason":"系统设置问题，与用户信息查询更正无关。","expression":"技术支持"}
+{"id":"negative-08","query":"我应该选哪个才划算？","expected_empty":true,"reason":"没有选项和需求，无法给出依据。","expression":"证据不足"}

@@ -1,0 +1,22 @@
+name: offline-demo-checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    env:
+      AGENT_MODE: langgraph
+      KNOWLEDGE_RETRIEVER: candidate
+      DEEPSEEK_API_KEY: ""
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install -c constraints-demo.txt -e ".[dev,live]"
+      - run: python scripts/check_offline.py
+      - run: python scripts/run_demo_smoke.py
